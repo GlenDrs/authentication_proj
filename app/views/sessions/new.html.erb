@@ -1,0 +1,9 @@
+<h1>Session Sign in</h1>
+
+<% form_tag ("/sessions" method="get") do |f| %>
+  <label> Email </label><br>
+  <%= f.email_field, :email %>
+  <label> Password </label><br>
+  <%= f.password_field, :password_digest %>
+  <%= f.submit, "Log in" %>
+<% end %>
