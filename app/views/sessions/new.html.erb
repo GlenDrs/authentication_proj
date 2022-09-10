@@ -1,9 +1,9 @@
-<h1>Session Sign in</h1>
+<h1>Session Log in</h1>
 
-<% form_tag ("/sessions" method="get") do |f| %>
-  <label> Email </label><br>
-  <%= f.email_field, :email %>
+<%= form_for(@user, url: new_sessions_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
   <label> Password </label><br>
-  <%= f.password_field, :password_digest %>
-  <%= f.submit, "Log in" %>
+  <%= f.password_field :password_digest %>
+  <%= f.submit "Log in" %>
 <% end %>
