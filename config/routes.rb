@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resource :sessions, only: [:new]
+  get '/sign_in', to: 'session#new'
+  post '/sign_in', to: 'session#create'
+  get '/sign_out', to: 'sessions#destroy'
+  root to: "static_pages#landing_page"
+
+  resources :users, only: [:index, :show, :new, :create, :delete]
+
 end
